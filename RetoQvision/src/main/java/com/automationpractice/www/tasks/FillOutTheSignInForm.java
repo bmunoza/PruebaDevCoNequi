@@ -35,9 +35,7 @@ public class FillOutTheSignInForm implements Task {
 			actor.attemptsTo(Click.on(SIGN_IN_HOME_BUTTON),
 					Enter.theValue(emailAddress).into(MyStoreSignInPage.EMAIL_INPUT),
 					Enter.theValue(password).into(MyStoreSignInPage.PASSWORD_INPUT),
-					Click.on(SIGN_IN_BUTTON),
-					Hover.over(DRESSES_OPTION),
-					Click.on(DRESSES_OPTION), ExtractMaximumPrice.with());
+					Click.on(SIGN_IN_BUTTON));
 
 
 		} catch (NoSuchElementException e) {
