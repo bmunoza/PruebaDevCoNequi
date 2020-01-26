@@ -22,7 +22,7 @@ public class OpenTheBrowser implements Task {
 
 
     @Override
-    @Step("{0} opens the browser on linio home page")
+    @Step("{0} opens the browser on My Store home page")
     public <T extends Actor> void performAs(T actor) {
         try {
             actor.attemptsTo(Open.browserOn(page));
