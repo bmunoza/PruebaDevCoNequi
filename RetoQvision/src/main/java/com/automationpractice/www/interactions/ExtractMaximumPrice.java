@@ -19,14 +19,15 @@ public class ExtractMaximumPrice implements Interaction {
     public <T extends Actor> void performAs(T actor) {
 
         String mostExpensive;
+        String price;
         ArrayList<String> listPrices = new ArrayList<String>();
 
         for(WebElementFacade elementFacade : DRESSES_PRICES.resolveAllFor(actor)) {
-            String price = elementFacade.getText();
+            price = elementFacade.getText();
             listPrices.add(price);
         }
-
         mostExpensive = Collections.max(listPrices);
+        System.out.println(mostExpensive);
         actor.attemptsTo(Click.on(dress(mostExpensive)));
     }
 

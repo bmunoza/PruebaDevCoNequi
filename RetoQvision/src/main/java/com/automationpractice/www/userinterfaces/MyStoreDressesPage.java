@@ -13,8 +13,34 @@ public class MyStoreDressesPage {
                 .located(By.xpath("//div[@class='right-block']//span[@class='price product-price'][contains(text(),'"+price+"')]"));
     }
 
-    public static final Target ADD_TO_CART_BUTTON = Target.the("add to cart button")
-            .located(By.xpath("//li[@class='ajax_block_product col-xs-12 col-sm-6 col-md-4 first-in-line first-item-of-tablet-line first-item-of-mobile-line']//a[@class='button ajax_add_to_cart_button btn btn-default']"));
+    public static final Target PROCEED_TO_CHECKOUT_BUTTON = Target.the("proceed to checkout button")
+            .located(By.xpath("//span[contains(text(),'Proceed to checkout')]"));
+
+    public static final Target PROCEED_CHECKOUT_SUMAMARY_BUTTON = Target.the("proceed to checkout button")
+            .located(By.xpath("//a[@class='button btn btn-default standard-checkout button-medium']"));
+
+    public static final Target PROCEED_CHECKOUT_ADDRESS_BUTTON = Target.the("proceed to checkout button")
+            .located(By.xpath("//button[@name='processAddress']//span[contains(text(),'Proceed to checkout')]"));
+
+    public static final Target PROCEED_CHECKOUT_SHIPPING_BUTTON = Target.the("proceed to checkout button")
+            .located(By.xpath("//button[@name='processCarrier']//span[contains(text(),'Proceed to checkout')]"));
+
+    public static final Target ACCEPT_TERMS_AND_CONDITIONS = Target.the("accept terms and conditions check")
+            .located(By.xpath("//input[@id='cgv']"));
+
+    public static final Target PAY_BY_BANK_WIRE_OPTION = Target.the("bank payment method")
+            .located(By.xpath("//a[@class='bankwire']"));
+
+    public static final Target CONFIRM_MY_ORDER_BUTTON = Target.the("i confirm my order button")
+            .located(By.xpath("//span[contains(text(),'I confirm my order')]"));
+
+
+
+
+
+
+
+
 
 
 }
