@@ -34,6 +34,11 @@ public class MyStoreDressesPage {
     public static final Target CONFIRM_MY_ORDER_BUTTON = Target.the("i confirm my order button")
             .located(By.xpath("//span[contains(text(),'I confirm my order')]"));
 
+    public static final Target INVOICE = Target.the("evidence purchase invoice")
+            .located(By.xpath("//div[@class='box']"));
+
+
+
 
 
 
