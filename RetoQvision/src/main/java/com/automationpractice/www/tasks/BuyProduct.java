@@ -1,20 +1,14 @@
 package com.automationpractice.www.tasks;
 
-import com.automationpractice.www.interactions.ExtractMaximumPrice;
+import com.automationpractice.www.interactions.ChooseMoreExpensive;
 import com.automationpractice.www.utils.TakeScreenshot;
 import net.serenitybdd.screenplay.Actor;
 import net.serenitybdd.screenplay.Task;
 import net.serenitybdd.screenplay.Tasks;
 import net.serenitybdd.screenplay.actions.Click;
 import net.serenitybdd.screenplay.actions.Hover;
-import net.thucydides.core.webdriver.ThucydidesWebDriverSupport;
-import org.apache.commons.io.FileUtils;
-import org.openqa.selenium.OutputType;
-import org.openqa.selenium.TakesScreenshot;
-import java.io.File;
-import java.io.IOException;
 
-import static com.automationpractice.www.models.Url.GMAIL_URL;
+import static com.automationpractice.www.models.Data.FILE_NAME;
 import static com.automationpractice.www.userinterfaces.MyStoreDressesPage.*;
 import static com.automationpractice.www.userinterfaces.MyStoreHomePage.DRESSES_OPTION;
 
@@ -25,7 +19,7 @@ public class BuyProduct implements Task {
     public <T extends Actor> void performAs(T actor) {
         actor.attemptsTo(Hover.over(DRESSES_OPTION),
                 Click.on(DRESSES_OPTION),
-                ExtractMaximumPrice.with(),
+                ChooseMoreExpensive.fromTheList(),
                 Click.on(PROCEED_TO_CHECKOUT_BUTTON),
                 Click.on(PROCEED_CHECKOUT_SUMAMARY_BUTTON),
                 Click.on(PROCEED_CHECKOUT_ADDRESS_BUTTON),
@@ -36,11 +30,11 @@ public class BuyProduct implements Task {
                 Hover.over(INVOICE)
         );
 
-        TakeScreenshot.withTheName("foto");
+        TakeScreenshot.withTheName(FILE_NAME.getString());
 
     }
 
-    public static BuyProduct with() {
+    public static BuyProduct inTheWebsite() {
         return Tasks.instrumented(BuyProduct.class);
     }
 }

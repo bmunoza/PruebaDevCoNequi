@@ -13,7 +13,7 @@ public class TakeScreenshot {
     public static void withTheName(String path) {
         File file = ((TakesScreenshot) ThucydidesWebDriverSupport.getDriver()).getScreenshotAs(OutputType.FILE);
         try {
-            FileUtils.copyFile(file, new File(path+".png"));
+            FileUtils.copyFile(file, new File(path));
         } catch (
                 IOException e) {
             e.printStackTrace();

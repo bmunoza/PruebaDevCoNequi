@@ -1,9 +1,7 @@
 package com.automationpractice.www.tasks;
 
 import com.automationpractice.www.exceptions.FillOutTheSignInFormException;
-import com.automationpractice.www.interactions.ExtractMaximumPrice;
 import com.automationpractice.www.userinterfaces.MyStoreSignInPage;
-import net.serenitybdd.screenplay.actions.Hover;
 import org.openqa.selenium.NoSuchElementException;
 import net.serenitybdd.screenplay.Actor;
 import net.serenitybdd.screenplay.Task;
@@ -12,8 +10,6 @@ import net.serenitybdd.screenplay.actions.Click;
 import net.serenitybdd.screenplay.actions.Enter;
 import net.thucydides.core.annotations.Step;
 
-import static com.automationpractice.www.userinterfaces.MyStoreDressesPage.DRESSES_PRICES;
-import static com.automationpractice.www.userinterfaces.MyStoreHomePage.DRESSES_OPTION;
 import static com.automationpractice.www.userinterfaces.MyStoreHomePage.SIGN_IN_HOME_BUTTON;
 import static com.automationpractice.www.userinterfaces.MyStoreSignInPage.SIGN_IN_BUTTON;
 
@@ -29,7 +25,7 @@ public class FillOutTheSignInForm implements Task {
 	}
 
 	@Override
-	@Step("{0} fills out the form to login in My Store page with the email #emailAdress and the password #password")
+	@Step("{0} fills out the form to login in My Store page fromTheList the email #emailAdress and the password #password")
 	public <T extends Actor> void performAs(T actor) {
 		try {
 			actor.attemptsTo(Click.on(SIGN_IN_HOME_BUTTON),

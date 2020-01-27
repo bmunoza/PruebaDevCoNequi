@@ -11,7 +11,7 @@ import java.util.Collections;
 import static com.automationpractice.www.userinterfaces.MyStoreDressesPage.DRESSES_PRICES;
 import static com.automationpractice.www.userinterfaces.MyStoreDressesPage.dress;
 
-public class ExtractMaximumPrice implements Interaction {
+public class ChooseMoreExpensive implements Interaction {
 
 
     @Override
@@ -30,7 +30,7 @@ public class ExtractMaximumPrice implements Interaction {
     }
 
 
-    public static ExtractMaximumPrice with() {
-        return Tasks.instrumented(ExtractMaximumPrice.class);
+    public static ChooseMoreExpensive fromTheList() {
+        return Tasks.instrumented(ChooseMoreExpensive.class);
     }
 }

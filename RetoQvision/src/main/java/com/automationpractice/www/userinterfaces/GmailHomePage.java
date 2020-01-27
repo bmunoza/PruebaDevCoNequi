@@ -30,6 +30,9 @@ public class GmailHomePage extends PageObject {
     public static final Target SEND_BUTTON= Target.the("Send input gmail")
             .locatedBy("//div[@class='dC']");
 
+    public static final Target MESSAGE_SUCCESSFUL= Target.the("message successful gmail")
+            .locatedBy("//span[@class='bAq']");
+
 
 
 
