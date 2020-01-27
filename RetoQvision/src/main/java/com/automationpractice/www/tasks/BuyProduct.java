@@ -1,6 +1,7 @@
 package com.automationpractice.www.tasks;
 
 import com.automationpractice.www.interactions.ExtractMaximumPrice;
+import com.automationpractice.www.utils.TakeScreenshot;
 import net.serenitybdd.screenplay.Actor;
 import net.serenitybdd.screenplay.Task;
 import net.serenitybdd.screenplay.Tasks;
@@ -13,6 +14,7 @@ import org.openqa.selenium.TakesScreenshot;
 import java.io.File;
 import java.io.IOException;
 
+import static com.automationpractice.www.models.Url.GMAIL_URL;
 import static com.automationpractice.www.userinterfaces.MyStoreDressesPage.*;
 import static com.automationpractice.www.userinterfaces.MyStoreHomePage.DRESSES_OPTION;
 
@@ -34,13 +36,7 @@ public class BuyProduct implements Task {
                 Hover.over(INVOICE)
         );
 
-        File file = ((TakesScreenshot) ThucydidesWebDriverSupport.getDriver()).getScreenshotAs(OutputType.FILE);
-        try {
-            FileUtils.copyFile(file, new File("FOTO.png"));
-        } catch (IOException e) {
-            e.printStackTrace();
-        }
-
+        TakeScreenshot.withTheName("foto");
 
     }
 

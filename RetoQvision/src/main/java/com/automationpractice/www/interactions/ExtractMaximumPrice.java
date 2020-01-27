@@ -6,7 +6,6 @@ import net.serenitybdd.screenplay.Interaction;
 import net.serenitybdd.core.pages.WebElementFacade;
 import net.serenitybdd.screenplay.Tasks;
 import net.serenitybdd.screenplay.actions.Click;
-import net.serenitybdd.screenplay.actions.Hover;
 import java.util.ArrayList;
 import java.util.Collections;
 import static com.automationpractice.www.userinterfaces.MyStoreDressesPage.DRESSES_PRICES;
@@ -27,7 +26,6 @@ public class ExtractMaximumPrice implements Interaction {
             listPrices.add(price);
         }
         mostExpensive = Collections.max(listPrices);
-        System.out.println(mostExpensive);
         actor.attemptsTo(Click.on(dress(mostExpensive)));
     }
 

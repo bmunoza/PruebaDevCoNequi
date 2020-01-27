@@ -37,7 +37,6 @@ public class FillOutTheSignInForm implements Task {
 					Enter.theValue(password).into(MyStoreSignInPage.PASSWORD_INPUT),
 					Click.on(SIGN_IN_BUTTON));
 
-
 		} catch (NoSuchElementException e) {
 			throw new FillOutTheSignInFormException(FillOutTheSignInFormException.NO_SUCH_ELEMENT_EXCEPTION, e);
 		}
