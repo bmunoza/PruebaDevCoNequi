@@ -7,7 +7,6 @@ import net.serenitybdd.screenplay.questions.Text;
 import net.serenitybdd.screenplay.targets.Target;
 
 import static com.automationpractice.www.models.Data.MESSAGE_SEND;
-import static com.automationpractice.www.userinterfaces.GmailHomePage.MESSAGE_SUCCESSFUL;
 import static net.serenitybdd.screenplay.matchers.WebElementStateMatchers.containsText;
 
 public class TheMessage implements Question<String> {

@@ -9,7 +9,6 @@ import net.serenitybdd.screenplay.Tasks;
 import net.serenitybdd.screenplay.actions.Click;
 import net.serenitybdd.screenplay.actions.Enter;
 import net.thucydides.core.annotations.Step;
-
 import static com.automationpractice.www.userinterfaces.MyStoreHomePage.SIGN_IN_HOME_BUTTON;
 import static com.automationpractice.www.userinterfaces.MyStoreSignInPage.SIGN_IN_BUTTON;
 

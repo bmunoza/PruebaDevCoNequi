@@ -6,6 +6,7 @@ import net.serenitybdd.screenplay.Tasks;
 import net.serenitybdd.screenplay.actions.Click;
 import net.serenitybdd.screenplay.actions.Enter;
 import net.serenitybdd.screenplay.actions.Upload;
+import net.thucydides.core.annotations.Step;
 
 import java.nio.file.Path;
 import java.nio.file.Paths;
@@ -23,6 +24,7 @@ public class WriteEmail implements Task {
     }
 
     @Override
+    @Step("{0} write a email for clara´s dad")
     public <T extends Actor> void performAs(T actor) {
         Path testFIlePath = Paths.get(FILE_NAME.getString()).toAbsolutePath();
 
@@ -31,9 +33,6 @@ public class WriteEmail implements Task {
                 Enter.theValue(AFFAIR_EMAIL.getString()).into(ASUNTO_IMPUT),
                 Upload.theFile(testFIlePath).to(INPUT_FILE),
                 Click.on(SEND_BUTTON));
-
-        //div[@class='b8 UC bAp']//div[@class='vh']
-
     }
 
     public static WriteEmail to(String destinationEmail) {

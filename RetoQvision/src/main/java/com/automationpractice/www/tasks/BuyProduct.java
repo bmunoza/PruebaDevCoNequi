@@ -7,6 +7,7 @@ import net.serenitybdd.screenplay.Task;
 import net.serenitybdd.screenplay.Tasks;
 import net.serenitybdd.screenplay.actions.Click;
 import net.serenitybdd.screenplay.actions.Hover;
+import net.thucydides.core.annotations.Step;
 
 import static com.automationpractice.www.models.Data.FILE_NAME;
 import static com.automationpractice.www.userinterfaces.MyStoreDressesPage.*;
@@ -16,6 +17,7 @@ public class BuyProduct implements Task {
 
 
     @Override
+    @Step("{0} buy a dress for Clara")
     public <T extends Actor> void performAs(T actor) {
         actor.attemptsTo(Hover.over(DRESSES_OPTION),
                 Click.on(DRESSES_OPTION),
