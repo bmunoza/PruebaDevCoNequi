@@ -26,4 +26,9 @@ dependencies {
     compile 'net.serenity-bdd:serenity-cucumber:1.9.5'
 }
 
+task users(type: Test) {
+    systemProperty 'US', System.getProperty('US')
+    systemProperty 'CO', System.getProperty('CO')
+}
+
 gradle.startParameter.continueOnFailure = true

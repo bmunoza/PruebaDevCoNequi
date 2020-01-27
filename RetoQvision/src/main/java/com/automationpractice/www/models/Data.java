@@ -5,7 +5,7 @@ public enum Data {
 
     FILE_NAME("Comprobante.png"),
     AFFAIR_EMAIL("Comprobante compra"),
-    MESSAGE_SEND("Mensaje enviado.");
+    MESSAGE_SEND("Message sent.");
 
     private String information;
 
