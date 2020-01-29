@@ -1,4 +1,4 @@
-package com.automationpractice.www.utils;
+package co.com.nequi.www.utils;
 
 public class TakeCredentialsFromUser {
 

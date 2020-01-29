@@ -1,34 +1,41 @@
-package com.automationpractice.www.tasks;
+package co.com.nequi.www.tasks;
 
+import co.com.nequi.www.interactions.TypeOnTheKeyboard;
 import net.serenitybdd.screenplay.Actor;
 import net.serenitybdd.screenplay.Task;
 import net.serenitybdd.screenplay.Tasks;
+import net.serenitybdd.screenplay.actions.Click;
 import net.serenitybdd.screenplay.actions.Enter;
+import net.serenitybdd.screenplay.waits.WaitUntil;
 import net.thucydides.core.annotations.Step;
-import org.openqa.selenium.Keys;
 
-import static com.automationpractice.www.userinterfaces.GmailHomePage.*;
+import static co.com.nequi.www.userinterfaces.NequiHomePage.CELL_PHONE_NUMBER_FIELD;
+import static co.com.nequi.www.userinterfaces.NequiHomePage.ENTER_BUTTON;
+import static net.serenitybdd.screenplay.matchers.WebElementStateMatchers.isVisible;
 
-public class LogInToGmail implements Task {
+
+public class LogInToNequi implements Task {
 
 
     private String user;
     private String password;
 
-    public LogInToGmail(String user, String password) {
+    public LogInToNequi(String user, String password) {
         this.user = user;
         this.password = password;
     }
 
     @Override
-    @Step("{0} sing in gmail page with credentials")
+    @Step("{0} sing in nequi app with credentials")
     public <T extends Actor> void performAs(T actor) {
-            actor.attemptsTo(Enter.theValue(user).into(USER_INPUT).thenHit(Keys.ENTER),
-                    Enter.theValue(password).into(PASSWORD_INPUT).thenHit(Keys.ENTER)
-            );
+
+        actor.attemptsTo(WaitUntil.the(CELL_PHONE_NUMBER_FIELD,isVisible()),
+                Enter.theValue(user).into(CELL_PHONE_NUMBER_FIELD),
+                Click.on(ENTER_BUTTON),
+                TypeOnTheKeyboard.withTheData(password));
     }
 
-    public static LogInToGmail withTheCredentials(String user, String password) {
-        return Tasks.instrumented(LogInToGmail.class, user, password);
+    public static LogInToNequi withTheCredentials(String user, String password) {
+        return Tasks.instrumented(LogInToNequi.class, user, password);
     }
 }

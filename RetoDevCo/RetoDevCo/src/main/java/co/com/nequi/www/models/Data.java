@@ -1,19 +1,19 @@
-package com.automationpractice.www.models;
+package co.com.nequi.www.models;
 
 public enum Data {
 
 
-    FILE_NAME("Comprobante.png"),
-    AFFAIR_EMAIL("Comprobante compra"),
-    MESSAGE_SEND("Message sent.");
+    AMOUNT_MONEY("10"),
+    TRANSACTION_MESSAGE("Prueba"),
+    TRANSACTION_MESSAGE_ERROR("Los envíos de tu cuenta Nequi a tí mismo no están permitidos.\n\nMejor intenta enviarle plata a un amigo.");
 
     private String information;
 
-    private Data(String information){
+    Data(String information){
         this.information = information;
     }
 
-    public String getString(){
+    public String getData(){
         return information;
     }
 }
