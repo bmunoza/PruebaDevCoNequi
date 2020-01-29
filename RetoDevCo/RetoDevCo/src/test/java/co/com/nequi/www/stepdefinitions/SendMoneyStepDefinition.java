@@ -24,12 +24,13 @@ public class SendMoneyStepDefinition {
 	public void setTheStage() {
 		OnStage.setTheStage(new OnlineCast());
 		takeCredentialsFromUser();
-		userInformation();
-		passwordInformation();
 	}
 
 	@Given("^(.*) is logged into the nequi app with his credentials$")
 	public void bryanIsLoggedIntoTheNequiAppWithHisCredentials(String actor) {
+
+		System.out.println(userInformation());
+		System.out.println(passwordInformation());
 		theActorCalled(actor).wasAbleTo(LogInToNequi.withTheCredentials(userInformation(),passwordInformation()));
 	}
 

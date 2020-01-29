@@ -31,4 +31,13 @@ task users(type: Test) {
     systemProperty 'CO', System.getProperty('CO')
 }
 
+
+
+
+compileJava.options.encoding = 'ISO-8859-1'
+
+tasks.withType(JavaCompile) {
+    options.encoding = 'UTF-8'
+}
+
 gradle.startParameter.continueOnFailure = true

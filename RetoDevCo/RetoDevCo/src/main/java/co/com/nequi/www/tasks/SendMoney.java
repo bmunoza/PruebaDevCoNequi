@@ -6,10 +6,13 @@ import net.serenitybdd.screenplay.Task;
 import net.serenitybdd.screenplay.Tasks;
 import net.serenitybdd.screenplay.actions.Click;
 import net.serenitybdd.screenplay.actions.Enter;
+import net.serenitybdd.screenplay.waits.WaitUntil;
 import net.thucydides.core.annotations.Step;
 import org.openqa.selenium.NoSuchElementException;
 import static co.com.nequi.www.exceptions.SendMoneyException.NO_SUCH_ELEMENT_EXCEPTION;
+import static co.com.nequi.www.userinterfaces.NequiHomePage.CELL_PHONE_NUMBER_FIELD;
 import static co.com.nequi.www.userinterfaces.SendMoneyPage.*;
+import static net.serenitybdd.screenplay.matchers.WebElementStateMatchers.isVisible;
 
 public class SendMoney implements Task {
 
@@ -28,7 +31,9 @@ public class SendMoney implements Task {
 	public <T extends Actor> void performAs(T actor) {
 
 		try {
-			actor.attemptsTo(Click.on(TRANSACTION_BUTTON),
+			actor.attemptsTo(WaitUntil.the(TRANSACTION_BUTTON,isVisible()),
+					Click.on(TRANSACTION_BUTTON),
+					WaitUntil.the(SEND_MONEY_BUTTON,isVisible()),
 					Click.on(SEND_MONEY_BUTTON),
 					Click.on(DISPONIBLE_MONEY_OPTION),
 					Enter.theValue(cellPhoneNumber).into(CELULAR_FIELD),

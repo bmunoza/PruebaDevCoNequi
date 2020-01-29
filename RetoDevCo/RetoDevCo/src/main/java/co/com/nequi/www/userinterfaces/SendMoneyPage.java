@@ -7,7 +7,7 @@ public class SendMoneyPage {
 
 
 	public static final Target SEND_MONEY_BUTTON = Target.the("send money button nequi")
-			.located(By.xpath("//*[@class='android.view.View' and ./*[@text='Envía plata']]"));
+			.located(By.xpath("//*[@text='Envía plata']"));
 
 	public static final Target TRANSACTION_BUTTON = Target.the("Transactions button in Nequi")
 			.located(By.xpath("//*[@text='#']"));
